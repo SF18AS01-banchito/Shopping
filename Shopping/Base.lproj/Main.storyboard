@@ -1,24 +1,278 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CZk-lZ-ROs">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Shop-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Shop" id="BYZ-38-t0r" customClass="ViewController" customModule="Shopping" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWO-Uh-dF6">
+                                <rect key="frame" x="212" y="285" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Dairy"/>
+                                <connections>
+                                    <action selector="veggieTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gsO-iT-oFr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LqQ-tx-uWt">
+                                <rect key="frame" x="87" y="285" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Vegetables"/>
+                                <connections>
+                                    <action selector="dairyTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CHl-8T-MSv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What are you shopping for today?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02O-FS-8Cq">
+                                <rect key="frame" x="54" y="136" width="243" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ggJ-np-Dsi"/>
+                    <connections>
+                        <segue destination="qLC-p3-7qy" kind="show" identifier="Dairy" id="h67-a8-YbK"/>
+                        <segue destination="fzJ-ms-EJV" kind="show" identifier="Vegetables" id="fwp-qX-CJl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="505" y="134"/>
+        </scene>
+        <!--Dairy-->
+        <scene sceneID="8mI-ek-vuM">
+            <objects>
+                <viewController title="Dairy" id="fzJ-ms-EJV" customClass="DairyViewController" customModule="Shopping" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="76i-bm-VcG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vu-hX-gqv">
+                                <rect key="frame" x="221" y="405" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Total"/>
+                                <connections>
+                                    <action selector="tTapped:" destination="Cjn-4r-4Op" eventType="touchUpInside" id="b3e-E5-WnO"/>
+                                    <action selector="totalTapped:" destination="fzJ-ms-EJV" eventType="touchUpInside" id="9PO-tP-Gg8"/>
+                                    <segue destination="WT8-MI-efl" kind="show" identifier="Total" id="Ezj-sw-bho"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdO-y0-0ey">
+                                <rect key="frame" x="82" y="194" width="40" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="🥛"/>
+                                <connections>
+                                    <action selector="itemButtom:" destination="fzJ-ms-EJV" eventType="touchUpInside" id="Sl0-ea-Fug"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBK-El-0dM">
+                                <rect key="frame" x="130" y="194" width="40" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="🧀"/>
+                                <connections>
+                                    <action selector="itemButtom:" destination="fzJ-ms-EJV" eventType="touchUpInside" id="32U-5j-4nK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNz-gf-Jta">
+                                <rect key="frame" x="170" y="194" width="40" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="🥚"/>
+                                <connections>
+                                    <action selector="itemButtom:" destination="fzJ-ms-EJV" eventType="touchUpInside" id="aFc-R4-Lmz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E44-4J-eDo">
+                                <rect key="frame" x="218" y="194" width="40" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="🍨"/>
+                                <connections>
+                                    <action selector="itemButtom:" destination="fzJ-ms-EJV" eventType="touchUpInside" id="Q4m-gr-yxm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jB7-d1-5PV">
+                                <rect key="frame" x="54" y="405" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="To Vegetables"/>
+                                <connections>
+                                    <action selector="toVegetables:" destination="fzJ-ms-EJV" eventType="touchUpInside" id="BRa-Fk-jy6"/>
+                                    <segue destination="qLC-p3-7qy" kind="show" identifier="Veggie" id="0WE-lo-OiW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="y4M-jf-5OB"/>
+                    </view>
+                    <connections>
+                        <outlet property="itemButtom" destination="kdO-y0-0ey" id="rsM-7I-Sog"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dwY-jF-Gxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Cjn-4r-4Op" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1348" y="636"/>
+        </scene>
+        <!--Total-->
+        <scene sceneID="zDk-NS-O0Q">
+            <objects>
+                <viewController title="Total" id="WT8-MI-efl" customClass="TotalViewController" customModule="Shopping" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wsl-Cs-Mkl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgR-ld-sX2">
+                                <rect key="frame" x="16" y="234" width="343" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="CMl-Ij-Gfk"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Total" id="4rE-Pf-z8c">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="QoW-gL-x4B">
+                            <connections>
+                                <segue destination="vJa-jP-6T3" kind="unwind" unwindAction="unwindWithUnwindSwgue:" id="SOb-sx-kSo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="label" destination="UgR-ld-sX2" id="rPp-0Z-hDd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IYK-wS-AZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vJa-jP-6T3" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2065" y="233"/>
+        </scene>
+        <!--Vegetables-->
+        <scene sceneID="3Uu-8E-b6S">
+            <objects>
+                <viewController title="Vegetables" id="qLC-p3-7qy" customClass="VegetablesViewController" customModule="Shopping" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Km-pa-tiz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crr-pj-PNb">
+                                <rect key="frame" x="66" y="216" width="40" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="🥕"/>
+                                <connections>
+                                    <action selector="itemButtonPressed:" destination="qLC-p3-7qy" eventType="touchUpInside" id="WC9-Jo-cwh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQ0-Ol-uNP">
+                                <rect key="frame" x="104" y="216" width="40" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="🥑"/>
+                                <connections>
+                                    <action selector="itemButtonPressed:" destination="qLC-p3-7qy" eventType="touchUpInside" id="2kS-NI-W5g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czr-vA-Tei">
+                                <rect key="frame" x="152" y="216" width="40" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="🥔"/>
+                                <connections>
+                                    <action selector="itemButtonPressed:" destination="qLC-p3-7qy" eventType="touchUpInside" id="5HK-KU-T3J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80o-rH-JaT">
+                                <rect key="frame" x="200" y="216" width="40" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="🥒"/>
+                                <connections>
+                                    <action selector="itemButtonPressed:" destination="qLC-p3-7qy" eventType="touchUpInside" id="hHW-7Z-2oG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11N-qE-5jd">
+                                <rect key="frame" x="248" y="216" width="40" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="🥦"/>
+                                <connections>
+                                    <action selector="itemButtonPressed:" destination="qLC-p3-7qy" eventType="touchUpInside" id="ZZm-qp-Jvj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcm-XM-2Ih">
+                                <rect key="frame" x="61" y="465" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="To Dairy"/>
+                                <connections>
+                                    <action selector="toDairy:" destination="qLC-p3-7qy" eventType="touchUpInside" id="L7G-CD-8BL"/>
+                                    <segue destination="fzJ-ms-EJV" kind="show" identifier="Dairy" id="m9u-uJ-iie"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEQ-Tw-6KL">
+                                <rect key="frame" x="230" y="465" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Total"/>
+                                <connections>
+                                    <action selector="totalTapped:" destination="qLC-p3-7qy" eventType="touchUpInside" id="5Jd-l0-aQX"/>
+                                    <action selector="veggieTapped:" destination="arp-Sw-svs" eventType="touchUpInside" id="PV8-yA-R8o"/>
+                                    <segue destination="WT8-MI-efl" kind="show" identifier="Total" id="Zwn-K3-9Oi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="kM2-9R-R05"/>
+                    </view>
+                    <connections>
+                        <outlet property="itemButtom" destination="crr-pj-PNb" id="RHK-ZR-0og"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xx6-7A-z3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="arp-Sw-svs" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1348" y="-313"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QA0-OD-ZPQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CZk-lZ-ROs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ySE-Wn-sP3">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CIr-W2-fvz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJD-nI-Au5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-212" y="134"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0WE-lo-OiW"/>
+        <segue reference="Zwn-K3-9Oi"/>
+        <segue reference="m9u-uJ-iie"/>
+    </inferredMetricsTieBreakers>
 </document>
