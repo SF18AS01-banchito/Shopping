@@ -23,20 +23,22 @@ class TotalViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        label.text = (String(format: "Your total is $%.2f for %d items\n\n",totals,qty));
-        if shoppingCart == nil{
+        label.text = String(format: "Your total is $%.2f for %d items\n\n", totals, qty);
+        if shoppingCart == nil {
             return;
         }
+        
         print(totals)
-        for (key, value) in shoppingCart!{
+        for (key, value) in shoppingCart! {
             print(key, value);
             let unitPrice: Double = value.price;
-            let totalPrice: Double = unitPrice *  Double(value.numberAlreadyPurchased);
-            label.text! += "\(value.numberAlreadyPurchased)  \(key)  \(totalPrice)\n"
+            let totalPrice = unitPrice * Double(value.numberAlreadyPurchased);
+            //label.text! += "\(value.numberAlreadyPurchased) \(key) \(totalPrice)\n";
+            label.text! += String(format: "%d %@ %.2f\ns" , value.numberAlreadyPurchased, key, totalPrice);
         }
-        label.text = (String(format: "Your total is $%.2f for %d items",totals,qty));
-        print(totals);
-    
+        
+        
+        
     }
     
 }
