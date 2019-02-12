@@ -34,7 +34,7 @@ class TotalViewController : UIViewController{
             let unitPrice: Double = value.price;
             let totalPrice = unitPrice * Double(value.numberAlreadyPurchased);
             //label.text! += "\(value.numberAlreadyPurchased) \(key) \(totalPrice)\n";
-            label.text! += String(format: "%d %@ %.2f\ns" , value.numberAlreadyPurchased, key, totalPrice);
+            label.text! += String(format: "%d %@ %.2f\n" , value.numberAlreadyPurchased, key, totalPrice);
         }
         
         
