@@ -17,6 +17,7 @@ class TotalViewController : UIViewController{
     
     var shoppingCart: [String: (numberAlreadyPurchased: Int, price: Double)]? = nil;
     
+
     @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
@@ -33,7 +34,9 @@ class TotalViewController : UIViewController{
             let totalPrice: Double = unitPrice *  Double(value.numberAlreadyPurchased);
             label.text! += "\(value.numberAlreadyPurchased)  \(key)  \(totalPrice)\n"
         }
-        
+        label.text = (String(format: "Your total is $%.2f for %d items",totals,qty));
+        print(totals);
+    
     }
     
 }
