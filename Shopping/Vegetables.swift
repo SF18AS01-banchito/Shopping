@@ -15,6 +15,7 @@ class VegetablesViewController: UIViewController{
     var object: Int = 0;      // quantity
     var name: String = "";    // name
     
+    var shoppingCart: [String: (numberAlreadyPurchased: Int, price: Double)]? = nil;
     
     var items: [String: (stock: Int, price: Double)] = [
         "🥑":(5,1.99),
@@ -29,15 +30,8 @@ class VegetablesViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
     
-    @IBAction func toDairy(_ sender: UIButton) {
-       performSegue(withIdentifier: "Dairy", sender: nil)
-    }
-    
-    @IBAction func totalTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "Total", sender: nil)
-    }
- 
     @IBAction func itemButtonPressed(_ sender: UIButton) {
         if let itemString = sender.title(for: .normal){
             let item = String(itemString.lowercased());
@@ -49,6 +43,16 @@ class VegetablesViewController: UIViewController{
             print(String(format: "cost of %@ is $%.2f", item, c));
             total += c;
             object += 1;
+            if shoppingCart == nil {
+                shoppingCart = [String: (numberAlreadyPurchased: Int, price: Double)]();
+            }
+            
+            if var tuple: (numberAlreadyPurchased: Int, price: Double) = shoppingCart?[item]{
+                tuple.numberAlreadyPurchased += 1;
+                shoppingCart?[item] = (tuple.numberAlreadyPurchased, tuple.price);
+            }else{
+                shoppingCart?[item] = (1,c);
+            }
             name = item;
         }
     }
@@ -61,15 +65,17 @@ class VegetablesViewController: UIViewController{
             totalViewController.totals += total;
             totalViewController.qty += object;
             totalViewController.name = name;
+            totalViewController.shoppingCart = shoppingCart;
             
-            if let dairyViewController: DairyViewController = segue.destination as? DairyViewController {
-                dairyViewController.total += total;
-                dairyViewController.object += object;
-                dairyViewController.name = name;
-            }
+        } else if let dairyViewController: DairyViewController = segue.destination as? DairyViewController {
+            dairyViewController.total += total;
+            dairyViewController.object += object;
+            dairyViewController.name = name;
+            dairyViewController.shoppingCart = shoppingCart;
         }
     }
-    
+
+
     
     func cost (of article: String)-> Double?{
         if let tuple:(stock: Int, price: Double) = items[article],
