@@ -21,11 +21,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func veggieTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "Vegetables", sender: nil)
+        performSegue(withIdentifier: "VegetablesViewController", sender: nil)
     }
     
     @IBAction func dairyTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "Dairy", sender: nil)
+        performSegue(withIdentifier: "DairyViewController", sender: nil)
     }
 }
 

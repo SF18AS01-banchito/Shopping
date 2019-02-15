@@ -1,5 +1,5 @@
 //
-//  Vegetables.swift
+//  Dairy.swift
 //  Shopping
 //
 //  Created by Esteban Ordonez on 2/4/19.
@@ -9,30 +9,34 @@
 import Foundation
 import UIKit
 
-class VegetablesViewController: UIViewController{
+class DairyViewController: UIViewController{
     
-    var total: Double = 0.0;  // price
-    var object: Int = 0;      // quantity
-    var name: String = "";    // name
+    var total: Double = 0.0;   // price
+    var object: Int = 0;       // quantity
+    var name: String = "";     // name
     
-    var shoppingCart: [String: (numberAlreadyPurchased: Int, price: Double)]? = nil;
+    //var shoppingCart :[String: (numberAlreadyPurchased: Int, price: Double)]? = nil;
+    var shoppingCart: ShoppingCart? = nil;
+    
+    
+    @IBOutlet weak var itemButtom: UIButton!
+    
+    
     
     var items: [String: (stock: Int, price: Double)] = [
-        "🥑":(5,1.99),
-        "🥕":(5,0.30),
-        "🥔":(5,0.50),
-        "🥒":(5,1.99),
-        "🥦":(5,2.99),
+        "🥛": (10, 0.99),
+        "🥚": (10, 0.50),
+        "🧀": (10, 4.50),
+        "🍨": (10, 6.99),
         
         ]
-    @IBOutlet weak var itemButtom: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
     
-    @IBAction func itemButtonPressed(_ sender: UIButton) {
+    
+    @IBAction func itemButtom(_ sender: UIButton) {
         if let itemString = sender.title(for: .normal){
             let item = String(itemString.lowercased());
             
@@ -45,19 +49,19 @@ class VegetablesViewController: UIViewController{
             object += 1;
             if shoppingCart == nil {
                 shoppingCart = [String: (numberAlreadyPurchased: Int, price: Double)]();
+                
             }
-            
-            if var tuple: (numberAlreadyPurchased: Int, price: Double) = shoppingCart?[item]{
+             if var tuple: (numberAlreadyPurchased: Int, price: Double) = shoppingCart?[item]{
                 tuple.numberAlreadyPurchased += 1;
                 shoppingCart?[item] = (tuple.numberAlreadyPurchased, tuple.price);
-            }else{
+             } else {
                 shoppingCart?[item] = (1,c);
             }
-            name = item;
+           name = item;
         }
+        
     }
     
-    //To Total.swift view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
@@ -67,15 +71,14 @@ class VegetablesViewController: UIViewController{
             totalViewController.name = name;
             totalViewController.shoppingCart = shoppingCart;
             
-        } else if let dairyViewController: DairyViewController = segue.destination as? DairyViewController {
-            dairyViewController.total += total;
-            dairyViewController.object += object;
-            dairyViewController.name = name;
-            dairyViewController.shoppingCart = shoppingCart;
+        }else if let vegetablesViewController: VegetablesViewController = segue.destination as? VegetablesViewController {
+            vegetablesViewController.total += total;
+            vegetablesViewController.object += object;
+            vegetablesViewController.name = name;
+            vegetablesViewController.shoppingCart = shoppingCart;
         }
     }
-
-
+    
     
     func cost (of article: String)-> Double?{
         if let tuple:(stock: Int, price: Double) = items[article],
@@ -84,8 +87,4 @@ class VegetablesViewController: UIViewController{
         }
         return nil;
     }
-    
-    
-    
-    
 }

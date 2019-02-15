@@ -15,15 +15,17 @@ class TotalViewController : UIViewController{
     var qty: Int = 0;
     var name: String = "";
     
-    var shoppingCart: [String: (numberAlreadyPurchased: Int, price: Double)]? = nil;
-    
+    //var shoppingCart: [String: (numberAlreadyPurchased: Int, price: Double)]? = nil;
+    var shoppingCart: ShoppingCart? = nil;
 
     @IBOutlet weak var label: UILabel!
     
+    @IBOutlet weak var totalLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        label.text = String(format: "Your total is $%.2f for %d items\n\n", totals, qty);
+        label.text = "Your Sopping cart: \n\n"
+        //label.text = String(format: "Your total is $%.2f for %d items\n\n", totals, qty);
         if shoppingCart == nil {
             return;
         }
@@ -35,6 +37,8 @@ class TotalViewController : UIViewController{
             let totalPrice = unitPrice * Double(value.numberAlreadyPurchased);
             //label.text! += "\(value.numberAlreadyPurchased) \(key) \(totalPrice)\n";
             label.text! += String(format: "%d %@ %.2f\n" , value.numberAlreadyPurchased, key, totalPrice);
+            totalLabel.text = String(format: "Your total is $%.2f for %d items\n\n", totals, qty);
+            
         }
         
         

@@ -19,17 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWO-Uh-dF6">
-                                <rect key="frame" x="212" y="285" width="36" height="30"/>
+                                <rect key="frame" x="192" y="285" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Dairy"/>
+                                <state key="normal" title="Vegetables"/>
                                 <connections>
                                     <action selector="veggieTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gsO-iT-oFr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LqQ-tx-uWt">
-                                <rect key="frame" x="87" y="285" width="77" height="30"/>
+                                <rect key="frame" x="108" y="285" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Vegetables"/>
+                                <state key="normal" title="Dairy"/>
                                 <connections>
                                     <action selector="dairyTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CHl-8T-MSv"/>
                                 </connections>
@@ -45,15 +45,16 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" id="3XU-9n-SE2"/>
                     <navigationItem key="navigationItem" id="ggJ-np-Dsi"/>
                     <connections>
-                        <segue destination="qLC-p3-7qy" kind="show" identifier="Dairy" id="h67-a8-YbK"/>
-                        <segue destination="fzJ-ms-EJV" kind="show" identifier="Vegetables" id="fwp-qX-CJl"/>
+                        <segue destination="qLC-p3-7qy" kind="show" identifier="VegetablesViewController" id="h67-a8-YbK"/>
+                        <segue destination="fzJ-ms-EJV" kind="show" identifier="DairyViewController" id="fwp-qX-CJl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="505" y="134"/>
+            <point key="canvasLocation" x="1444" y="133.5832083958021"/>
         </scene>
         <!--Dairy-->
         <scene sceneID="8mI-ek-vuM">
@@ -160,6 +161,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="y4M-jf-5OB"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Dairy" id="3h7-g9-ePY"/>
                     <connections>
                         <outlet property="itemButtom" destination="kdO-y0-0ey" id="rsM-7I-Sog"/>
                     </connections>
@@ -167,7 +169,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwY-jF-Gxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Cjn-4r-4Op" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1348" y="636"/>
+            <point key="canvasLocation" x="2287.1999999999998" y="635.53223388305855"/>
         </scene>
         <!--Total-->
         <scene sceneID="zDk-NS-O0Q">
@@ -177,10 +179,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgR-ld-sX2">
-                                <rect key="frame" x="16" y="95" width="343" height="301"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgR-ld-sX2">
+                                <rect key="frame" x="16" y="147" width="343" height="282"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fe-8g-Vsx">
+                                <rect key="frame" x="16" y="437" width="343" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -197,12 +206,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="label" destination="UgR-ld-sX2" id="rPp-0Z-hDd"/>
+                        <outlet property="totalLabel" destination="2Fe-8g-Vsx" id="j9j-cl-Ni7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IYK-wS-AZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="vJa-jP-6T3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2064.8000000000002" y="232.53373313343329"/>
+            <point key="canvasLocation" x="3004" y="232.53373313343329"/>
         </scene>
         <!--Vegetables-->
         <scene sceneID="3Uu-8E-b6S">
@@ -323,6 +333,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kM2-9R-R05"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Vegetables" id="PYi-RR-dk1"/>
                     <connections>
                         <outlet property="itemButtom" destination="crr-pj-PNb" id="RHK-ZR-0og"/>
                     </connections>
@@ -330,7 +341,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xx6-7A-z3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="arp-Sw-svs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1348" y="-313.49325337331339"/>
+            <point key="canvasLocation" x="2287.1999999999998" y="-313.49325337331339"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QA0-OD-ZPQ">
@@ -343,17 +354,37 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CIr-W2-fvz"/>
+                        <segue destination="rEf-xL-tzf" kind="relationship" relationship="rootViewController" id="CIr-W2-fvz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJD-nI-Au5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-212" y="134"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="KoD-c9-MYw">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="rEf-xL-tzf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="fxJ-f8-vtu"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hls-mK-wAD">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="bT9-E1-4u1"/>
+                        <segue destination="qLC-p3-7qy" kind="relationship" relationship="viewControllers" id="UsS-0T-xvE"/>
+                        <segue destination="fzJ-ms-EJV" kind="relationship" relationship="viewControllers" id="efb-J8-kRs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2M4-dA-tiI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="504.80000000000001" y="133.5832083958021"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0WE-lo-OiW"/>
-        <segue reference="Ezj-sw-bho"/>
-        <segue reference="m9u-uJ-iie"/>
+        <segue reference="h67-a8-YbK"/>
+        <segue reference="Zwn-K3-9Oi"/>
+        <segue reference="fwp-qX-CJl"/>
     </inferredMetricsTieBreakers>
 </document>
